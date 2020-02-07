@@ -16,10 +16,13 @@
 2. Entre na pasta rodando `cd GoBarber`;
 3. Rode `yarn` para instalar as dependências;
 4. Crie um banco de dados no `postgres` com o nome de `gobarber`;
-5. Renomeie o arquivo `.env.example` para `.env`;
-6. Coloque as suas credenciais dentro do `.env`;
-7. Rode `yarn sequelize db:migrate` para executar as migrations;
-8. Rode `yarn dev` para iniciar o servidor.
+5. Crie um banco de dados no `mongodb` com o nome de `gobarber`;
+6. Instancie uma base de dados `redis` (será usado para fila de e-mails);
+7. Renomeie o arquivo `.env.example` para `.env`;
+8. Coloque as suas credenciais dentro do `.env`;
+9. Rode `yarn sequelize db:migrate` para executar as migrations;
+10. Rode `yarn dev` para iniciar o servidor.
+11. Rode `yarn queue` para iniciar o servidor de filas.
 
 ## Rotas
 
@@ -35,13 +38,13 @@
 
 ### GET
 
-`/providers` - Lista profissionais
+`/providers` (auth::userId) - Lista profissionais
 <br/>
-`/providers/:providerId/available` - Lista horários disponíveis
+`/providers/:providerId/available` (auth::userId) - Lista horários disponíveis
 <br/>
-`/appointments` - Lista todos agendamento
+`/appointments` (auth::userId) - Lista todos agendamento
 <br/>
-`/schedule` (auth::providerId) - Lista agendamentos do profissional
+`/schedule` (auth::userId) - Lista agendamentos do profissional
 <br/>
 `/notifications` (auth::userId) - Lista todas as notificações
 
@@ -49,11 +52,13 @@
 
 `/users` (name, email, oldPassword, password, confirmPassword, avatar_id, auth::userId) - Atualizar usuário
 <br/>
-`/notifications/:id` - Marca notificação como lida
+`/notifications/:id` (auth::userId) - Marca notificação como lida
 
 ### DELETE
 
-`/appointments/:id` - Cancela agendamento
+`/appointments/:id` (auth::userId) - Cancela agendamento
 
+<br/>
+__(auth::userId)* Autenticação necessária para acessar a rota, token referente ao usuário (obtido em `/session`).__
 <br/>
 <p>:warning: <b>API ainda em desenvolvimento</b> :warning:</p>
