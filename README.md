@@ -59,6 +59,6 @@
 `/appointments/:id` (auth::userId) - Cancela agendamento
 
 <br/>
-__(auth::userId)* Autenticação necessária para acessar a rota, token referente ao usuário (obtido em `/session`).__
+<p>:warning: (auth::userId)* Autenticação necessária para acessar a rota. Token referente ao usuário (obtido em <b>/session</b>).</p>
 <br/>
 <p>:warning: <b>API ainda em desenvolvimento</b> :warning:</p>
