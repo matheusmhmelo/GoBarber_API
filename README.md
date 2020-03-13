@@ -42,5 +42,5 @@
 
 ## Rotas
 
-Postman: `https://documenter.getpostman.com/view/7792112/SzS2wTHE?version=latest`
+<a href="https://documenter.getpostman.com/view/7792112/SzS2wTHE?version=latest" target="_blank">Documentação Postman<a/>
 
