@@ -6,9 +6,7 @@
   API GoBarber
 </h3>
 
-<p align="justify">Software de agendamentos online para serviços de barbearia. O projeto foi feito durante o Bootcamp GoStack 10.0 e ainda será melhorado.
-  Entre algumas funcionalidades da API estão: cadastro de usuários, cadastro de profissionais, login e autenticação com JWT, upload de arquivos,
-  notificações por e-mail, filas de gerenciamento de e-mail utilizando Redis, tratamento de exceções entre outras.</p>
+<p align="justify">Software de agendamentos online para serviços de barbearia. O projeto foi feito durante o Bootcamp GoStack 10.0. API criada em Node.JS utilizando Express e Sequelize, com tecnologias como autenticação JWT, MongoDB, Redis e PostgreSQL</p>
 
 ## Instalação e execução
 
@@ -24,41 +22,25 @@
 10. Rode `yarn dev` para iniciar o servidor.
 11. Rode `yarn queue` para iniciar o servidor de filas.
 
+## Funcionalidades
+
+### Usuários
+- Criação de contas
+- Edição de contas
+- Upload de imagem (avatar do usuário)
+- Conta cliente e conta profissional
+
+### Login
+- Login de clientes e profissionais
+- Autenticação
+
+### Agendamento
+- Notificação de novos agendamentos
+- Listagem de horários disponíveis 
+- Listagem de horários agendados
+- Cancelamento de agendamento (2 horas de antecedência)
+
 ## Rotas
 
-### POST
+Postman: `https://documenter.getpostman.com/view/7792112/SzS2wTHE?version=latest`
 
-`/users` (name, email, password) - Criação de conta
-<br/>
-`/session` (email, password) - Login
-<br/>
-`/files` (file, auth::userId) - Upload logo
-<br/>
-`/appointments` (provider_id, date, auth::userId) - Agendamento
-
-### GET
-
-`/providers` (auth::userId) - Lista profissionais
-<br/>
-`/providers/:providerId/available` (auth::userId) - Lista horários disponíveis
-<br/>
-`/appointments` (auth::userId) - Lista todos agendamento
-<br/>
-`/schedule` (auth::userId) - Lista agendamentos do profissional
-<br/>
-`/notifications` (auth::userId) - Lista todas as notificações
-
-### PUT
-
-`/users` (name, email, oldPassword, password, confirmPassword, avatar_id, auth::userId) - Atualizar usuário
-<br/>
-`/notifications/:id` (auth::userId) - Marca notificação como lida
-
-### DELETE
-
-`/appointments/:id` (auth::userId) - Cancela agendamento
-
-<br/>
-<p>:warning: (auth::userId)* Autenticação necessária para acessar a rota. Token referente ao usuário (obtido em <b>/session</b>).</p>
-<br/>
-<p>:warning: <b>API ainda em desenvolvimento</b> :warning:</p>
