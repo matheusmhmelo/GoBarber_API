@@ -8,7 +8,7 @@
 
 <p align="justify">🇧🇷 Software de agendamentos online para serviços de barbearia. O projeto foi feito durante o Bootcamp GoStack 10.0. API criada em Node.JS utilizando Express e Sequelize, com tecnologias como autenticação JWT, MongoDB, Redis e PostgreSQL</p>
 
-<p align="justify">🇺🇸 Software for online appointments to barber services. The project was don on the Bootcamp GoStack 10.0. API made in Node.JS using Express and Sequelize, with tecnologies like JWT authentication, MongoDB, Redi and PostgreSQL.</p>
+<p align="justify">🇺🇸 Software for online appointments to barber services. The project was done on the Bootcamp GoStack 10.0. API made in Node.JS using Express and Sequelize, with tecnologies like JWT authentication, MongoDB, Redi and PostgreSQL.</p>
 
 <h1>🇧🇷 Sobre a API</h1>
 
